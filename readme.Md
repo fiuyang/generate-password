@@ -1,16 +1,3 @@
-# How To Use For Python
-
-- `pip install multiprocessing`
-- `pip install pandas`
-- `pip install bcrypt`
-
-# Add File Excel:
-- `df = pd.read_excel('C:\\{{ Filename }}.xlsx')`
-
-# Save Update Excel:
-- `processed_df.to_excel('C:\\{{ Filename }}.xlsx', index=False)`
-
-
 # How To Use For Node js
 
 - `npm install fs`
@@ -18,18 +5,24 @@
 - `npm install bcrypt`
 
 # Add File Excel:
-- `const workbook = XLSX.readFile('{{ Filename }}.xlsx');`
+- `const workbook = XLSX.readFile('C:\\Users\\LENOVO\\Excell\\{file}.xlsx');`
 
 # Save Update Excel:
-- `XLSX.writeFile(newWorkbook, '{{ Filename }}.xlsx');`
+- `const workbook = XLSX.readFile('C:\\Users\\LENOVO\\Excel\\{file}.xlsx');`
+
+# Run file
+- `node bcryptPassword.js`
+
 
 # How To Use For Golang
-
-- `go get github.com/tealeg/xlsx`
-- `go get golang.org/x/crypto/bcrypt`
+- `go mod init {name-project}`
+- `go mod tidy`
 
 # Add File Excel:
-- `excelFileName := "{{ Filename }}.xlsx"`
+- `excelFileName := `C:\Users\LENOVO\Excel\{file}.xlsx'``
 
 # Save Update Excel:
-- `outputFileName := "{{ Filename }}.xlsx"`
+- `outputFileName := `C:\Users\LENOVO\Excel\{file}.xlsx'``
+
+# Run file
+- `go run bcryptPassword.go`

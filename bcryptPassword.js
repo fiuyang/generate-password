@@ -12,14 +12,15 @@ function hashPassword(password) {
 // Fungsi untuk memproses setiap baris pada file Excel
 function processRow(row) {
   const updatedRow = { ...row };
-  updatedRow.Password = hashPassword(row.Password);
-  console.log("Password:", updatedRow.Password);
+  // ganti dgn header row yg mau di bcrypt
+  // row.password ->  nama header password di excel
+  updatedRow.password = hashPassword(row.password);
   return updatedRow;
 }
 
 // Fungsi utama
 function main() {
-  const workbook = XLSX.readFile('Dealer.xlsx');
+  const workbook = XLSX.readFile('C:\\Users\\LENOVO\\Excel\\file.xlsx');
 
   const worksheet = workbook.Sheets[workbook.SheetNames[0]];
   const jsonData = XLSX.utils.sheet_to_json(worksheet);
@@ -29,7 +30,7 @@ function main() {
   const newWorkbook = XLSX.utils.book_new();
   const newWorksheet = XLSX.utils.json_to_sheet(processedData);
   XLSX.utils.book_append_sheet(newWorkbook, newWorksheet, 'Sheet1');
-  XLSX.writeFile(newWorkbook, 'Dealer.xlsx');
+  XLSX.writeFile(newWorkbook, 'C:\\Users\\LENOVO\\Excel\\generate.xlsx');
 }
 
 main();
